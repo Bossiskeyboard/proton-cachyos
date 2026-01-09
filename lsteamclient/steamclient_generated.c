@@ -32,6 +32,7 @@ static const struct { const char *iface_version; iface_constructor ctor; } const
     {"STEAMPARENTALSETTINGS_INTERFACE_VERSION001", &create_winISteamParentalSettings_STEAMPARENTALSETTINGS_INTERFACE_VERSION001},
     {"STEAMREMOTEPLAY_INTERFACE_VERSION001", &create_winISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION001},
     {"STEAMREMOTEPLAY_INTERFACE_VERSION002", &create_winISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION002},
+    {"STEAMREMOTEPLAY_INTERFACE_VERSION003", &create_winISteamRemotePlay_STEAMREMOTEPLAY_INTERFACE_VERSION003},
     {"STEAMREMOTESTORAGE_INTERFACE_VERSION001", &create_winISteamRemoteStorage_STEAMREMOTESTORAGE_INTERFACE_VERSION001},
     {"STEAMREMOTESTORAGE_INTERFACE_VERSION002", &create_winISteamRemoteStorage_STEAMREMOTESTORAGE_INTERFACE_VERSION002},
     {"STEAMREMOTESTORAGE_INTERFACE_VERSION003", &create_winISteamRemoteStorage_STEAMREMOTESTORAGE_INTERFACE_VERSION003},
@@ -50,6 +51,8 @@ static const struct { const char *iface_version; iface_constructor ctor; } const
     {"STEAMSCREENSHOTS_INTERFACE_VERSION001", &create_winISteamScreenshots_STEAMSCREENSHOTS_INTERFACE_VERSION001},
     {"STEAMSCREENSHOTS_INTERFACE_VERSION002", &create_winISteamScreenshots_STEAMSCREENSHOTS_INTERFACE_VERSION002},
     {"STEAMSCREENSHOTS_INTERFACE_VERSION003", &create_winISteamScreenshots_STEAMSCREENSHOTS_INTERFACE_VERSION003},
+    {"STEAMTIMELINE_INTERFACE_V001", &create_winISteamTimeline_STEAMTIMELINE_INTERFACE_V001},
+    {"STEAMTIMELINE_INTERFACE_V004", &create_winISteamTimeline_STEAMTIMELINE_INTERFACE_V004},
     {"STEAMUGC_INTERFACE_VERSION001", &create_winISteamUGC_STEAMUGC_INTERFACE_VERSION001},
     {"STEAMUGC_INTERFACE_VERSION002", &create_winISteamUGC_STEAMUGC_INTERFACE_VERSION002},
     {"STEAMUGC_INTERFACE_VERSION003", &create_winISteamUGC_STEAMUGC_INTERFACE_VERSION003},
@@ -68,6 +71,7 @@ static const struct { const char *iface_version; iface_constructor ctor; } const
     {"STEAMUGC_INTERFACE_VERSION017", &create_winISteamUGC_STEAMUGC_INTERFACE_VERSION017},
     {"STEAMUGC_INTERFACE_VERSION018", &create_winISteamUGC_STEAMUGC_INTERFACE_VERSION018},
     {"STEAMUGC_INTERFACE_VERSION020", &create_winISteamUGC_STEAMUGC_INTERFACE_VERSION020},
+    {"STEAMUGC_INTERFACE_VERSION021", &create_winISteamUGC_STEAMUGC_INTERFACE_VERSION021},
     {"STEAMUNIFIEDMESSAGES_INTERFACE_VERSION001", &create_winISteamUnifiedMessages_STEAMUNIFIEDMESSAGES_INTERFACE_VERSION001},
     {"STEAMUSERSTATS_INTERFACE_VERSION001", &create_winISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION001},
     {"STEAMUSERSTATS_INTERFACE_VERSION002", &create_winISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION002},
@@ -81,6 +85,7 @@ static const struct { const char *iface_version; iface_constructor ctor; } const
     {"STEAMUSERSTATS_INTERFACE_VERSION010", &create_winISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION010},
     {"STEAMUSERSTATS_INTERFACE_VERSION011", &create_winISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION011},
     {"STEAMUSERSTATS_INTERFACE_VERSION012", &create_winISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION012},
+    {"STEAMUSERSTATS_INTERFACE_VERSION013", &create_winISteamUserStats_STEAMUSERSTATS_INTERFACE_VERSION013},
     {"STEAMVIDEO_INTERFACE_V001", &create_winISteamVideo_STEAMVIDEO_INTERFACE_V001},
     {"STEAMVIDEO_INTERFACE_V002", &create_winISteamVideo_STEAMVIDEO_INTERFACE_V002},
     {"STEAMVIDEO_INTERFACE_V007", &create_winISteamVideo_STEAMVIDEO_INTERFACE_V007},
@@ -122,6 +127,7 @@ static const struct { const char *iface_version; iface_constructor ctor; } const
     {"SteamFriends014", &create_winISteamFriends_SteamFriends014},
     {"SteamFriends015", &create_winISteamFriends_SteamFriends015},
     {"SteamFriends017", &create_winISteamFriends_SteamFriends017},
+    {"SteamFriends018", &create_winISteamFriends_SteamFriends018},
     {"SteamGameCoordinator001", &create_winISteamGameCoordinator_SteamGameCoordinator001},
     {"SteamGameServer002", &create_winISteamGameServer_SteamGameServer002},
     {"SteamGameServer003", &create_winISteamGameServer_SteamGameServer003},
@@ -251,6 +257,7 @@ extern void init_winISteamParties_rtti( char * );
 extern void init_winISteamRemotePlay_rtti( char * );
 extern void init_winISteamRemoteStorage_rtti( char * );
 extern void init_winISteamScreenshots_rtti( char * );
+extern void init_winISteamTimeline_rtti( char * );
 extern void init_winISteamUGC_rtti( char * );
 extern void init_winISteamUnifiedMessages_rtti( char * );
 extern void init_winISteamUser_rtti( char * );
@@ -291,6 +298,7 @@ void init_rtti( char *base )
     init_winISteamRemotePlay_rtti( base );
     init_winISteamRemoteStorage_rtti( base );
     init_winISteamScreenshots_rtti( base );
+    init_winISteamTimeline_rtti( base );
     init_winISteamUGC_rtti( base );
     init_winISteamUnifiedMessages_rtti( base );
     init_winISteamUser_rtti( base );
